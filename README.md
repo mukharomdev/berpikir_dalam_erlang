@@ -14,4 +14,4 @@ Build
 Build documentation
 -------------------
 
-    $ rebar3 ex_doc
+    $ rebar3 ex_doc -o docs
