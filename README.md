@@ -15,3 +15,8 @@ Build documentation
 -------------------
 
     $ rebar3 ex_doc -o docs
+
+Running shell
+--------------
+
+    $rebar3 shell
