@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.31.2">
+    <meta name="project" content="berpikir_dalam_erlang v0.1.0">
+
+
+    <title>membangun_system — berpikir_dalam_erlang v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-erlang-DUKXLSAT.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-A7S2WMC7.js"></script>
+    <script src="dist/sidebar_items-7A2310D3.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-JRPQ5PR6.js"></script>
+
+
+  </head>
+  <body data-type="extras" class="page-extra">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<div class="background-layer"></div>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
+berpikir_dalam_erlang
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+      <div class="top-search">
+        <div class="search-settings">
+          <form class="search-bar" action="search.html">
+            <label class="search-label">
+              <span class="sr-only">Search documentation of berpikir_dalam_erlang</span>
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </label>
+            <button type="submit" class="search-button" aria-label="Submit Search">
+              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+            </button>
+            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+              <i class="ri-close-line ri-lg" title="Cancel search"></i>
+            </button>
+          </form>
+          <div class="autocomplete">
+          </div>
+          <button class="icon-settings display-settings">
+            <i class="ri-settings-3-line"></i>
+            <span class="sr-only">Settings</span>
+          </button>
+        </div>
+
+      </div>
+
+<h1>
+
+
+  <span>membangun_system</span>
+</h1>
+
+<p>Erlang adalah bahasa pemrograman yang dirancang untuk membangun sistem yang bersifat concurrent, fault-tolerant, dan scalable. Erlang sering digunakan dalam industri telekomunikasi, finansial, dan sistem pesan real-time karena kemampuannya yang unik dalam menangani ratusan ribu proses bersamaan dengan overhead yang rendah.</p><p>Berikut adalah contoh sederhana dari sebuah sistem Erlang. Contoh ini melibatkan pembuatan server sederhana yang dapat menangani permintaan dari klien. Server ini akan menerima pesan, mencetak pesan tersebut ke console, dan mengirimkan balasan ke klien.</p><ol><li>Definisi Modul Server</li></ol><p>erlang</p><p>-module(echo_server).
+-behaviour(gen_server).</p><p>%% API
+-export([start_link/0]).</p><p>%% gen_server callbacks
+-export([init/1, handle_call/3, handle_cast/2, handle_info/2,</p><pre><code class="makeup erlang" translate="no"><span class="w">     </span><span class="ss">terminate</span><span class="p">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">code_change</span><span class="p">/</span><span class="mi">3</span><span class="p">]</span><span class="p">)</span><span class="p">.</span></code></pre><p>-define(SERVER, ?MODULE).</p><p>start_link() -&gt;</p><pre><code class="makeup erlang" translate="no"><span class="nc">gen_server</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="2317107650-1">(</span><span class="p" data-group-id="2317107650-2">{</span><span class="ss">local</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="n">SERVER</span><span class="p" data-group-id="2317107650-2">}</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="n">MODULE</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2317107650-3">[</span><span class="p" data-group-id="2317107650-3">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2317107650-4">[</span><span class="p" data-group-id="2317107650-4">]</span><span class="p" data-group-id="2317107650-1">)</span><span class="p">.</span></code></pre><p>init([]) -&gt;</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2645945078-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2645945078-2">#{</span><span class="p" data-group-id="2645945078-2">}</span><span class="p" data-group-id="2645945078-1">}</span><span class="p">.</span><span class="w"> </span><span class="c1">% state is just an empty map</span></code></pre><p>handle_call({send_echo, Msg}, _From, State) -&gt;</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="7740238191-1">(</span><span class="s">&quot;Received message: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7740238191-2">[</span><span class="n">Msg</span><span class="p" data-group-id="7740238191-2">]</span><span class="p" data-group-id="7740238191-1">)</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="7740238191-3">{</span><span class="ss">reply</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7740238191-4">{</span><span class="ss">echo</span><span class="p">,</span><span class="w"> </span><span class="n">Msg</span><span class="p" data-group-id="7740238191-4">}</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="7740238191-3">}</span><span class="p">;</span></code></pre><p>handle_call(_Request, _From, State) -&gt;</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0429254560-1">{</span><span class="ss">reply</span><span class="p">,</span><span class="w"> </span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="0429254560-1">}</span><span class="p">.</span></code></pre><p>handle_cast(_Msg, State) -&gt;</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7238999769-1">{</span><span class="ss">noreply</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="7238999769-1">}</span><span class="p">.</span></code></pre><p>handle_info(_Info, State) -&gt;</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8342787209-1">{</span><span class="ss">noreply</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="8342787209-1">}</span><span class="p">.</span></code></pre><p>terminate(_Reason, _State) -&gt;</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="p">.</span></code></pre><p>code_change(_OldVsn, State, _Extra) -&gt;</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7207646376-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="7207646376-1">}</span><span class="p">.</span></code></pre><ol start="2"><li>Definisi Modul Klien</li></ol><p>erlang</p><p>-module(echo_client).
+-export([send/1]).</p><p>send(Msg) -&gt;</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6781562677-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Pid</span><span class="p" data-group-id="6781562677-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">echo_server</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="6781562677-2">(</span><span class="p" data-group-id="6781562677-2">)</span><span class="p">,</span><span class="w">
+</span><span class="nc">gen_server</span><span class="p">:</span><span class="nf">call</span><span class="p" data-group-id="6781562677-3">(</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6781562677-4">{</span><span class="ss">send_echo</span><span class="p">,</span><span class="w"> </span><span class="n">Msg</span><span class="p" data-group-id="6781562677-4">}</span><span class="p" data-group-id="6781562677-3">)</span><span class="p">.</span></code></pre><p>Cara Menjalankan:</p><pre><code class="makeup erlang" translate="no"><span class="n">Kompilasi</span><span class="w"> </span><span class="n">Kode</span><span class="p">:</span><span class="w"> </span><span class="n">Pertama</span><span class="p">,</span><span class="w"> </span><span class="n">Anda</span><span class="w"> </span><span class="ss">perlu</span><span class="w"> </span><span class="ss">mengkompilasi</span><span class="w"> </span><span class="ss">kedua</span><span class="w"> </span><span class="ss">modul</span><span class="w"> </span><span class="ss">tersebut</span><span class="w"> </span><span class="ss">dengan</span><span class="w"> </span><span class="ss">menggunakan</span><span class="w"> </span><span class="ss">perintah</span><span class="w"> </span><span class="nf">c</span><span class="p" data-group-id="6306766400-1">(</span><span class="n">Module</span><span class="p" data-group-id="6306766400-1">)</span><span class="p">.</span><span class="w"> </span><span class="ss">di</span><span class="w"> </span><span class="ss">shell</span><span class="w"> </span><span class="n">Erlang</span><span class="p">.</span><span class="w">
+
+</span><span class="ss">shell</span></code></pre><p>1&gt; c(echo_server).
+2&gt; c(echo_client).</p><p>Menggunakan Klien: Setelah kedua modul berhasil dikompilasi, Anda dapat menggunakan fungsi send/1 dari modul echo_client untuk mengirim pesan ke server.</p><p>shell</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">echo_client</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="1359748987-1">(</span><span class="s">&quot;Hello, Erlang!&quot;</span><span class="p" data-group-id="1359748987-1">)</span><span class="p">.</span><span class="w">
+
+</span><span class="n">Di</span><span class="w"> </span><span class="ss">sisi</span><span class="w"> </span><span class="ss">server</span><span class="p">,</span><span class="w"> </span><span class="n">Anda</span><span class="w"> </span><span class="ss">akan</span><span class="w"> </span><span class="ss">melihat</span><span class="w"> </span><span class="ss">pesan</span><span class="w"> </span><span class="s">&quot;Received message: &#39;Hello, Erlang!&#39;&quot;</span><span class="w"> </span><span class="ss">dicetak</span><span class="w"> </span><span class="ss">ke</span><span class="w"> </span><span class="ss">console</span><span class="p">,</span><span class="w"> </span><span class="ss">dan</span><span class="w"> </span><span class="ss">klien</span><span class="w"> </span><span class="ss">akan</span><span class="w"> </span><span class="ss">menerima</span><span class="w"> </span><span class="ss">balasan</span><span class="w"> </span><span class="p" data-group-id="1359748987-2">{</span><span class="ss">echo</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello, Erlang!&quot;</span><span class="p" data-group-id="1359748987-2">}</span><span class="p">.</span></code></pre><p>Contoh di atas hanya permulaan dari apa yang bisa dilakukan dengan Erlang dalam membangun sistem yang bersifat concurrent dan fault-tolerant. Erlang memiliki ekosistem yang luas dengan berbagai library dan tools yang mendukung pembangunan sistem yang kompleks.</p>
+<div class="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="distribusi_erlang.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+distribusi_erlang
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+      <a href="license.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+LICENSE
+        </span>
+      </a>
+
+  </div>
+</div>
+      <footer class="footer">
+        <p>
+
+            <span class="line">
+              <a href="https://hex.pm/packages/berpikir_dalam_erlang/0.1.0" class="footer-hex-package">Hex Package</a>
+
+              <a href="https://preview.hex.pm/preview/berpikir_dalam_erlang/0.1.0">Hex Preview</a>
+
+                (<a href="https://preview.hex.pm/preview/berpikir_dalam_erlang/0.1.0/show/s_doc/membangun_system.md">current file</a>)
+
+            </span>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="berpikir_dalam_erlang.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.2) for the
+
+            <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
+
+        </p>
+
+      </footer>
+    </div>
+  </div>
+</main>
+</div>
+
+
+  </body>
+</html>
