@@ -7,7 +7,7 @@
    [kernel,
     stdlib
    ]},
-  {env,[]},
+  {env,[{bde,"berpikir_dalam_erlang"}]},
   {modules, []},
 
   {licenses, ["Apache-2.0"]},

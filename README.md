@@ -1,9 +1,9 @@
-berpikir_dalam_erlang
-=====
+# berpikir dalam erlang
+
 
 Repo ini berisi semua catatan pribadi tentang bahasa pemrograman Erlang/OTP
 
-Untuk mengunduh semua plugin silahkan buka terminal
+## Untuk mengunduh semua plugin silahkan buka terminal
 ----------------------------------------------------
 
 Build

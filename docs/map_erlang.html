@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.31.2">
+    <meta name="project" content="berpikir_dalam_erlang v0.1.0">
+
+
+    <title>Map — berpikir_dalam_erlang v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-erlang-DUKXLSAT.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-A7S2WMC7.js"></script>
+    <script src="dist/sidebar_items-FFFD9A72.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-JRPQ5PR6.js"></script>
+
+
+  </head>
+  <body data-type="extras" class="page-extra">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<div class="background-layer"></div>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
+berpikir_dalam_erlang
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+      <div class="top-search">
+        <div class="search-settings">
+          <form class="search-bar" action="search.html">
+            <label class="search-label">
+              <span class="sr-only">Search documentation of berpikir_dalam_erlang</span>
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </label>
+            <button type="submit" class="search-button" aria-label="Submit Search">
+              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+            </button>
+            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+              <i class="ri-close-line ri-lg" title="Cancel search"></i>
+            </button>
+          </form>
+          <div class="autocomplete">
+          </div>
+          <button class="icon-settings display-settings">
+            <i class="ri-settings-3-line"></i>
+            <span class="sr-only">Settings</span>
+          </button>
+        </div>
+
+      </div>
+
+<h1>
+
+
+  <span>Map</span>
+</h1>
+
+<p>Di Erlang, tipe data map adalah struktur data yang sangat fleksibel dan kuat untuk menyimpan pasangan kunci-nilai, di mana setiap kunci unik terkait dengan sebuah nilai. Maps diperkenalkan di Erlang versi 17, memberikan cara yang lebih dinamis dan ekspresif untuk bekerja dengan data terstruktur dibandingkan dengan record yang lebih statis dan harus didefinisikan terlebih dahulu.
+Membuat Map</p><p>Untuk membuat sebuah map, Anda menggunakan sintaks {} dengan elemen-elemen di dalamnya, di mana setiap elemen adalah sebuah pasangan kunci =&gt; nilai. Kunci dan nilai dapat berupa tipe data apa pun.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="n">Map1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1947655363-1">#{</span><span class="ss">key1</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">value1</span><span class="p">,</span><span class="w"> </span><span class="ss">key2</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">value2</span><span class="p" data-group-id="1947655363-1">}</span><span class="p">.</span></code></pre><p>Contoh</p><p>Berikut adalah beberapa contoh sederhana penggunaan map di Erlang:</p><ol><li>Membuat dan Mengakses Map</li></ol><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="c1">% Membuat map</span><span class="w">
+</span><span class="n">Map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3886611434-1">#{</span><span class="ss">name</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">age</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="ss">city</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;New York&quot;</span><span class="p" data-group-id="3886611434-1">}</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">% Mengakses nilai menggunakan kunci</span><span class="w">
+</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Map</span><span class="p" data-group-id="3886611434-2">#{</span><span class="ss">name</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="3886611434-2">}</span><span class="p">.</span><span class="w">
+</span><span class="n">Age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Map</span><span class="p" data-group-id="3886611434-3">#{</span><span class="ss">age</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="3886611434-3">}</span><span class="p">.</span><span class="w">
+
+</span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="3886611434-4">(</span><span class="s">&quot;Name: </span><span class="si">~p</span><span class="s">, Age: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3886611434-5">[</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Age</span><span class="p" data-group-id="3886611434-5">]</span><span class="p" data-group-id="3886611434-4">)</span><span class="p">.</span></code></pre><ol start="2"><li>Menambah atau Memperbarui Nilai</li></ol><p>Untuk menambah atau memperbarui nilai dalam map, Anda bisa menggunakan sintaks maps:put/3 atau Map#{Key =&gt; Value} untuk pembaruan.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="c1">% Menambah/memperbarui nilai</span><span class="w">
+</span><span class="n">Map2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Map</span><span class="p" data-group-id="1328592660-1">#{</span><span class="ss">city</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;Los Angeles&quot;</span><span class="p" data-group-id="1328592660-1">}</span><span class="p">.</span><span class="w">
+
+</span><span class="c1">% Menambahkan nilai baru</span><span class="w">
+</span><span class="n">Map3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Map2</span><span class="p" data-group-id="1328592660-2">#{</span><span class="ss">country</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;USA&quot;</span><span class="p" data-group-id="1328592660-2">}</span><span class="p">.</span><span class="w">
+
+</span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1328592660-3">(</span><span class="s">&quot;</span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1328592660-4">[</span><span class="n">Map3</span><span class="p" data-group-id="1328592660-4">]</span><span class="p" data-group-id="1328592660-3">)</span><span class="p">.</span></code></pre><ol start="3"><li>Menghapus Kunci</li></ol><p>Untuk menghapus kunci (dan nilai terkait) dari map, gunakan maps:remove/2.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="c1">% Menghapus kunci</span><span class="w">
+</span><span class="n">Map4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">maps</span><span class="p">:</span><span class="nf">remove</span><span class="p" data-group-id="4894782501-1">(</span><span class="ss">city</span><span class="p">,</span><span class="w"> </span><span class="n">Map3</span><span class="p" data-group-id="4894782501-1">)</span><span class="p">.</span><span class="w">
+
+</span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4894782501-2">(</span><span class="s">&quot;</span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4894782501-3">[</span><span class="n">Map4</span><span class="p" data-group-id="4894782501-3">]</span><span class="p" data-group-id="4894782501-2">)</span><span class="p">.</span></code></pre><ol start="4"><li>Iterasi Atas Map</li></ol><p>Anda dapat menggunakan maps:fold/3 untuk mengiterasi atas map, melakukan operasi pada setiap pasangan kunci-nilai.</p><p>Makeup.Styles.HTML.StyleMap.abap_style()</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="c1">% Iterasi atas map dan cetak setiap kunci-nilai</span><span class="w">
+</span><span class="nc">maps</span><span class="p">:</span><span class="nf">fold</span><span class="p" data-group-id="9579500592-1">(</span><span class="nf">fun</span><span class="p" data-group-id="9579500592-2">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="9579500592-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+              </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="9579500592-3">(</span><span class="s">&quot;Key: </span><span class="si">~p</span><span class="s">, Value: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9579500592-4">[</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="9579500592-4">]</span><span class="p" data-group-id="9579500592-3">)</span><span class="p">,</span><span class="w">
+              </span><span class="n">Acc</span><span class="w">
+          </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="p" data-group-id="9579500592-1">)</span><span class="p">.</span></code></pre><p>Maps sangat berguna untuk kasus-kasus di mana Anda perlu struktur data yang mudah diubah dan diakses secara dinamis dengan kunci yang berbeda-beda. Erlang menyediakan banyak fungsi bawaan dalam modul maps untuk bekerja dengan struktur data ini, termasuk pencarian, penambahan, pembaruan, dan penghapusan elemen, serta iterasi dan transformasi.</p>
+<div class="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="membangun_system.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+Membangun Sistem
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+      <a href="license.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+LICENSE
+        </span>
+      </a>
+
+  </div>
+</div>
+      <footer class="footer">
+        <p>
+
+            <span class="line">
+              <a href="https://hex.pm/packages/berpikir_dalam_erlang/0.1.0" class="footer-hex-package">Hex Package</a>
+
+              <a href="https://preview.hex.pm/preview/berpikir_dalam_erlang/0.1.0">Hex Preview</a>
+
+                (<a href="https://preview.hex.pm/preview/berpikir_dalam_erlang/0.1.0/show/s_doc/map_erlang.md">current file</a>)
+
+            </span>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="berpikir_dalam_erlang.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.2) for the
+
+            <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
+
+        </p>
+
+      </footer>
+    </div>
+  </div>
+</main>
+</div>
+
+
+  </body>
+</html>
