@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.31.2">
+    <meta name="project" content="berpikir_dalam_erlang v0.1.0">
+
+
+    <title>Sintaks Dasar Erlang — berpikir_dalam_erlang v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-erlang-DUKXLSAT.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-A7S2WMC7.js"></script>
+    <script src="dist/sidebar_items-67E8715E.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-JRPQ5PR6.js"></script>
+
+
+  </head>
+  <body data-type="extras" class="page-extra">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<div class="background-layer"></div>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
+berpikir_dalam_erlang
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+      <div class="top-search">
+        <div class="search-settings">
+          <form class="search-bar" action="search.html">
+            <label class="search-label">
+              <span class="sr-only">Search documentation of berpikir_dalam_erlang</span>
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </label>
+            <button type="submit" class="search-button" aria-label="Submit Search">
+              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+            </button>
+            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+              <i class="ri-close-line ri-lg" title="Cancel search"></i>
+            </button>
+          </form>
+          <div class="autocomplete">
+          </div>
+          <button class="icon-settings display-settings">
+            <i class="ri-settings-3-line"></i>
+            <span class="sr-only">Settings</span>
+          </button>
+        </div>
+
+      </div>
+
+<h1>
+
+
+  <span>Sintaks Dasar Erlang</span>
+</h1>
+
+<p>Erlang memiliki sintaks yang cukup unik dan ringkas yang mungkin terlihat asing bagi mereka yang terbiasa dengan bahasa pemrograman lain. Berikut adalah beberapa sintaks dasar dan konsep penting dalam Erlang untuk membantu Anda memulai:</p><ol><li>Variabel</li></ol><ul><li><p>Variabel di Erlang harus diawali dengan huruf kapital.</p></li><li><p>Variabel bersifat immutable, artinya sekali nilai telah di-assign, nilai tersebut tidak bisa diubah.</p></li></ul><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Erlang&quot;</span><span class="p">.</span><span class="w">
+</span><span class="n">Count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span></code></pre><ol start="2"><li>Atom</li></ol><p>Atom adalah konstanta yang namanya merupakan nilainya sendiri. Atom diawali dengan huruf kecil atau diapit dengan tanda petik ' jika mengandung spasi atau karakter khusus.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="ss">atom</span><span class="p">.</span><span class="w">
+</span><span class="ss">&#39;another atom&#39;</span><span class="p">.</span></code></pre><ol start="3"><li>Tuples</li></ol><p>Tuple digunakan untuk menyimpan sejumlah tetap elemen. Elemen-elemen dalam tuple dapat berupa tipe data apapun. Tuple ditulis dengan menggunakan kurung kurawal {}.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="p" data-group-id="9632682762-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="p" data-group-id="9632682762-1">}</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9632682762-2">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NotFound&quot;</span><span class="p" data-group-id="9632682762-2">}</span><span class="p">.</span></code></pre><ol start="4"><li><p>Lists</p><p> List digunakan untuk menyimpan sejumlah variabel elemen. List ditulis dengan menggunakan kurung siku [].</p></li></ol><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="p" data-group-id="9240937487-1">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="9240937487-1">]</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9240937487-2">[</span><span class="s">&quot;erlang&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;elixir&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;otp&quot;</span><span class="p" data-group-id="9240937487-2">]</span><span class="p">.</span></code></pre><ol start="5"><li>String</li></ol><p>String di Erlang dinyatakan sebagai list dari karakter-karakter.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">.</span></code></pre><ol start="6"><li>Fungsi</li></ol><p>Fungsi didefinisikan dalam modul. Setiap fungsi diawali dengan kata kunci -export jika ingin diakses dari luar modul.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="1697730421-1">(</span><span class="ss">example</span><span class="p" data-group-id="1697730421-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="1697730421-2">(</span><span class="p" data-group-id="1697730421-3">[</span><span class="ss">say_hello</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="1697730421-3">]</span><span class="p" data-group-id="1697730421-2">)</span><span class="p">.</span><span class="w">
+
+</span><span class="nf">say_hello</span><span class="p" data-group-id="1697730421-4">(</span><span class="p" data-group-id="1697730421-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1697730421-5">(</span><span class="s">&quot;Hello, World!</span><span class="si">~n</span><span class="s">&quot;</span><span class="p" data-group-id="1697730421-5">)</span><span class="p">.</span></code></pre><ol start="7"><li>Percabangan</li></ol><p>Erlang menggunakan case...of untuk percabangan dan juga guard clauses untuk kondisi lebih kompleks.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="k">case</span><span class="w"> </span><span class="n">Variable</span><span class="w"> </span><span class="k">of</span><span class="w">
+    </span><span class="ss">pattern1</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">Guard1</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Expression1</span><span class="p">;</span><span class="w">
+    </span><span class="ss">pattern2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Expression2</span><span class="p">;</span><span class="w">
+    </span><span class="p">_</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">DefaultExpression</span><span class="w">
+</span><span class="k">end</span><span class="p">.</span></code></pre><ol start="8"><li>Pengulangan</li></ol><p>Erlang tidak memiliki konstruksi pengulangan tradisional seperti for atau while. Sebagai gantinya, pengulangan dicapai melalui rekursi.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="nf">loop</span><span class="p" data-group-id="7921838202-1">(</span><span class="mi">0</span><span class="p" data-group-id="7921838202-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">ok</span><span class="p">;</span><span class="w">
+</span><span class="nf">loop</span><span class="p" data-group-id="7921838202-2">(</span><span class="n">N</span><span class="p" data-group-id="7921838202-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="7921838202-3">(</span><span class="s">&quot;Loop iteration: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7921838202-4">[</span><span class="n">N</span><span class="p" data-group-id="7921838202-4">]</span><span class="p" data-group-id="7921838202-3">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">loop</span><span class="p" data-group-id="7921838202-5">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p" data-group-id="7921838202-5">)</span><span class="p">.</span></code></pre><ol start="9"><li>Concurrent Programming</li></ol><p>Erlang sangat baik dalam menangani pemrograman konkuren. Untuk membuat proses, Anda menggunakan fungsi spawn.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="nf">spawn</span><span class="p" data-group-id="9870134199-1">(</span><span class="ss">module</span><span class="p">,</span><span class="w"> </span><span class="ss">function_name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9870134199-2">[</span><span class="n">Arg1</span><span class="p">,</span><span class="w"> </span><span class="n">Arg2</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="9870134199-2">]</span><span class="p" data-group-id="9870134199-1">)</span><span class="p">.</span></code></pre><ol start="10"><li>Komentar</li></ol><p>Komentar di Erlang diawali dengan tanda %.</p><pre><code class="makeup erlang" translate="no"><span class="w">
+</span><span class="c1">% Ini adalah komentar</span></code></pre><p>Ini adalah pengenalan dasar terhadap sintaks Erlang. Erlang memiliki banyak fitur lanjutan, terutama terkait dengan pemrograman fungsional dan konkuren, yang membuatnya sangat cocok untuk sistem berskala besar dan aplikasi real-time.</p>
+<div class="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="shell_erlang.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+Shell Erlang
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+      <a href="tipe_data_erlang.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+Tipe Data Erlang
+        </span>
+      </a>
+
+  </div>
+</div>
+      <footer class="footer">
+        <p>
+
+            <span class="line">
+              <a href="https://hex.pm/packages/berpikir_dalam_erlang/0.1.0" class="footer-hex-package">Hex Package</a>
+
+              <a href="https://preview.hex.pm/preview/berpikir_dalam_erlang/0.1.0">Hex Preview</a>
+
+                (<a href="https://preview.hex.pm/preview/berpikir_dalam_erlang/0.1.0/show/s_doc/sintaks_dasar_erlang.md">current file</a>)
+
+            </span>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="berpikir_dalam_erlang.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.2) for the
+
+            <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
+
+        </p>
+
+      </footer>
+    </div>
+  </div>
+</main>
+</div>
+
+
+  </body>
+</html>

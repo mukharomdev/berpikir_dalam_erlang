@@ -25,6 +25,7 @@ Langkah 1: Definisikan Modul dan Fungsi
 
 Pada node pengirim, kita akan mendefinisikan sebuah modul sender dengan fungsi untuk mengirim pesan ke node penerima.
 Pada Node Pengirim (Terminal 1)
+
 ```erlang
 
 -module(sender).
@@ -41,6 +42,7 @@ Pada Node Pengirim (Terminal 1)
                 io:format("No reply received~n")
             end.
 ```
+
 Pada Node Penerima (Terminal 2)
 
 Di node penerima, kita mendefinisikan modul receiver yang memulai proses yang menunggu pesan dan membalasnya.
@@ -61,24 +63,25 @@ loop() ->
     end,
     loop().
 ```
-Langkah 2: Kompilasi dan Jalankan Kode
 
-    Pada Node Penerima (Terminal 2)
+## Langkah 2: Kompilasi dan Jalankan Kode
 
-    Kompilasi receiver dan jalankan fungsi start/0:
+- Pada Node Penerima (Terminal 2)
 
-    erlang
+- Kompilasi receiver dan jalankan fungsi start/0:
+
+```erlang
 
 c(receiver).
 receiver:start().
-
+```
 Pada Node Pengirim (Terminal 1)
 
 Kompilasi sender dan kirim pesan ke receiver di node lain menggunakan fungsi send/1. Gantikan NodeName dengan nama node penerima yang tepat (dalam kasus ini node2@localhost):
 
-erlang
+```erlang
 
-    c(sender).
-    sender:send('node2@localhost').
-
+c(sender).
+sender:send('node2@localhost').
+```
 Anda seharusnya melihat pesan yang dikirim dari node pengirim ke penerima, dan penerima membalas pesan tersebut. Demonstrasi ini menunjukkan dasar-dasar komunikasi antar-node dalam aplikasi Erlang yang terdistribusi. Erlang menjadikan pengembangan sistem terdistribusi lebih mudah dengan model pemrograman berbasis pesan yang kuat dan kemampuan untuk transparan mengelola proses di berbagai node.

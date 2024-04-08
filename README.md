@@ -9,14 +9,33 @@ Repo ini berisi semua catatan pribadi tentang bahasa pemrograman Erlang/OTP
 Build
 -----
 
-    $ rebar3 compile
+```terminal
+$ rebar3 compile
+```
 
 Build documentation
 -------------------
 
-    $ rebar3 ex_doc -o docs
+```terminal
+$ rebar3 ex_doc -o docs
+```
 
 Running shell
 --------------
 
-    $rebar3 shell
+```terminal
+$rebar3 shell
+```
+# Daftar isi
+
+- [Apa itu Erlang/OTP?](/s_doc/tentang_erlang.md)
+
+- [Apa itu OTP?](/s_doc/otp_erlang.md)
+
+- [Shell Erlang](/s_doc/shell_erlang.md)
+
+- [Sintaks Dasar Erlang](s_doc/sintaks_dasar_erlang.md)
+
+- [Tipe data Erlang](/s_doc/tipe_data_erlang.md)
+
+
