@@ -8,7 +8,7 @@
     <meta name="project" content="berpikir_dalam_erlang v0.1.0">
 
 
-    <title>word_counter — berpikir_dalam_erlang v0.1.0</title>
+    <title>hello_server — berpikir_dalam_erlang v0.1.0</title>
     <link rel="stylesheet" href="dist/html-erlang-DUKXLSAT.css" />
 
 
@@ -117,11 +117,15 @@ Pages
 
 <h1>
 
-  <span translate="no">word_counter</span> 
+  <span translate="no">hello_server</span> 
   <small class="app-vsn" translate="no">(berpikir_dalam_erlang v0.1.0)</small>
 
 </h1>
 
+
+  <section id="moduledoc">
+An OTP gen_server example
+  </section>
 
 
   <section id="summary" class="details-list">
@@ -138,7 +142,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#count_words/1" translate="no">count_words(Input)</a>
+        <a href="#code_change/3" translate="no">code_change(OldVsn, State, Extra)</a>
 
       </div>
 
@@ -146,7 +150,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#display_result/1" translate="no">display_result(Words)</a>
+        <a href="#get_count/0" translate="no">get_count()</a>
 
       </div>
 
@@ -154,7 +158,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#read_input/0" translate="no">read_input()</a>
+        <a href="#handle_call/3" translate="no">handle_call(_, From, State)</a>
 
       </div>
 
@@ -162,7 +166,55 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#start/0" translate="no">start()</a>
+        <a href="#handle_cast/2" translate="no">handle_cast(_, State)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#handle_info/2" translate="no">handle_info(Info, State)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#init/1" translate="no">init(_)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#say_hello/0" translate="no">say_hello()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#start_link/0" translate="no">start_link()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#stop/0" translate="no">stop()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#terminate/2" translate="no">terminate(Reason, State)</a>
 
       </div>
 
@@ -181,14 +233,14 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="count_words/1">
+<section class="detail" id="code_change/3">
 
   <div class="detail-header">
-    <a href="#count_words/1" class="detail-link" title="Link to this function">
+    <a href="#code_change/3" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">count_words(Input)</h1>
+    <h1 class="signature" translate="no">code_change(OldVsn, State, Extra)</h1>
 
 
   </div>
@@ -198,14 +250,14 @@ Pages
 
   </section>
 </section>
-<section class="detail" id="display_result/1">
+<section class="detail" id="get_count/0">
 
   <div class="detail-header">
-    <a href="#display_result/1" class="detail-link" title="Link to this function">
+    <a href="#get_count/0" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">display_result(Words)</h1>
+    <h1 class="signature" translate="no">get_count()</h1>
 
 
   </div>
@@ -215,14 +267,14 @@ Pages
 
   </section>
 </section>
-<section class="detail" id="read_input/0">
+<section class="detail" id="handle_call/3">
 
   <div class="detail-header">
-    <a href="#read_input/0" class="detail-link" title="Link to this function">
+    <a href="#handle_call/3" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">read_input()</h1>
+    <h1 class="signature" translate="no">handle_call(_, From, State)</h1>
 
 
   </div>
@@ -232,14 +284,116 @@ Pages
 
   </section>
 </section>
-<section class="detail" id="start/0">
+<section class="detail" id="handle_cast/2">
 
   <div class="detail-header">
-    <a href="#start/0" class="detail-link" title="Link to this function">
+    <a href="#handle_cast/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">start()</h1>
+    <h1 class="signature" translate="no">handle_cast(_, State)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="handle_info/2">
+
+  <div class="detail-header">
+    <a href="#handle_info/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">handle_info(Info, State)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="init/1">
+
+  <div class="detail-header">
+    <a href="#init/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">init(_)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="say_hello/0">
+
+  <div class="detail-header">
+    <a href="#say_hello/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">say_hello()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="start_link/0">
+
+  <div class="detail-header">
+    <a href="#start_link/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">start_link()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="stop/0">
+
+  <div class="detail-header">
+    <a href="#stop/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">stop()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="terminate/2">
+
+  <div class="detail-header">
+    <a href="#terminate/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">terminate(Reason, State)</h1>
 
 
   </div>

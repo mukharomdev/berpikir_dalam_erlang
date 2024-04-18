@@ -58,19 +58,24 @@ send(Msg) ->
 ```
 Cara Menjalankan:
 
-    Kompilasi Kode: Pertama, Anda perlu mengkompilasi kedua modul tersebut dengan menggunakan perintah c(Module). di shell Erlang.
+- Kompilasi Kode: 
+
+Pertama, Anda perlu mengkompilasi kedua modul tersebut dengan menggunakan perintah c(Module). di shell Erlang.
 
 ```shell
 
 1> c(echo_server).
 2> c(echo_client).
 ```
-Menggunakan Klien: Setelah kedua modul berhasil dikompilasi, Anda dapat menggunakan fungsi send/1 dari modul echo_client untuk mengirim pesan ke server.
+- Menggunakan Klien: 
+
+Setelah kedua modul berhasil dikompilasi, Anda dapat menggunakan fungsi send/1 dari modul echo_client untuk mengirim pesan ke server.
 
 ```shell
 
     3> echo_client:send("Hello, Erlang!").
 ```
-    Di sisi server, Anda akan melihat pesan "Received message: 'Hello, Erlang!'" dicetak ke console, dan klien akan menerima balasan {echo, "Hello, Erlang!"}.
+    
+Di sisi server, Anda akan melihat pesan "Received message: 'Hello, Erlang!'" dicetak ke console, dan klien akan menerima balasan {echo, "Hello, Erlang!"}.
 
 Contoh di atas hanya permulaan dari apa yang bisa dilakukan dengan Erlang dalam membangun sistem yang bersifat concurrent dan fault-tolerant. Erlang memiliki ekosistem yang luas dengan berbagai library dan tools yang mendukung pembangunan sistem yang kompleks.
